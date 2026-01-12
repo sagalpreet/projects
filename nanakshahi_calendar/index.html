@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,9 +35,9 @@
             width: 90%;
             padding: 48px 32px;
             border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.05);
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         h1 {
@@ -77,10 +78,11 @@
             background: #ffffff;
             color: #3c4043;
         }
+
         .btn-google:hover {
             background: #f8f9fa;
             border-color: #d2d2d2;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         /* Apple Style */
@@ -89,10 +91,11 @@
             color: #ffffff;
             border: none;
         }
+
         .btn-apple:hover {
             background: #1d1d1f;
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
         .icon {
@@ -127,42 +130,61 @@
             }
         }
     </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DS09DWHV44"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DS09DWHV44');
+    </script>
+
 </head>
+
 <body>
 
-<div class="card">
-    <h1>Nanakshahi Calendar</h1>
-    <p>Subscribe to automatically sync Gurpurabs and significant Sikh historical dates with your calendar.</p>
+    <div class="card">
+        <h1>Nanakshahi Calendar</h1>
+        <p>Subscribe to automatically sync Gurpurabs and significant Sikh historical dates with your calendar.</p>
 
-    <div class="button-stack">
-        <!-- Google Calendar -->
-        <a href="https://calendar.google.com/calendar/r?cid=webcal://gist.githubusercontent.com/sagalpreet/217c93d8b3c4361e594230f739650447/raw/Nanakshahi.ics" class="btn btn-google" target="_blank">
-            <svg class="icon" viewBox="0 0 24 24">
-                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" fill="#4285F4"/>
-                <path d="M12.5 15.5h5V20h-5z" fill="#34A853"/>
-                <path d="M18 10h3v5h-3z" fill="#FBBC05"/>
-                <path d="M3 5h3v3H3z" fill="#EA4335"/>
-            </svg>
-            Add to Google Calendar
-        </a>
+        <div class="button-stack">
+            <!-- Google Calendar -->
+            <a href="https://calendar.google.com/calendar/r?cid=webcal://gist.githubusercontent.com/sagalpreet/217c93d8b3c4361e594230f739650447/raw/Nanakshahi.ics"
+                class="btn btn-google" target="_blank">
+                <svg class="icon" viewBox="0 0 24 24">
+                    <path
+                        d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"
+                        fill="#4285F4" />
+                    <path d="M12.5 15.5h5V20h-5z" fill="#34A853" />
+                    <path d="M18 10h3v5h-3z" fill="#FBBC05" />
+                    <path d="M3 5h3v3H3z" fill="#EA4335" />
+                </svg>
+                Add to Google Calendar
+            </a>
 
-        <!-- Apple Calendar -->
-        <a href="webcal://gist.githubusercontent.com/sagalpreet/217c93d8b3c4361e594230f739650447/raw/Nanakshahi.ics" class="btn btn-apple">
-            <svg class="icon" viewBox="0 0 512 512">
-                <rect x="32" y="112" width="448" height="368" rx="64" fill="#ffffff"/>
-                <path d="M32 176h448V112c0-35.3-28.7-64-64-64H96c-35.3 0-64 28.7-64 64v64z" fill="#ff3b30"/>
-                <text x="50%" y="145" fill="white" font-size="60" font-weight="700" text-anchor="middle" font-family="sans-serif">JAN</text>
-                <text x="50%" y="400" fill="#333" font-size="240" font-weight="600" text-anchor="middle" font-family="sans-serif">12</text>
-            </svg>
-            Subscribe on Apple Devices
-        </a>
+            <!-- Apple Calendar -->
+            <a href="webcal://gist.githubusercontent.com/sagalpreet/217c93d8b3c4361e594230f739650447/raw/Nanakshahi.ics"
+                class="btn btn-apple">
+                <svg class="icon" viewBox="0 0 512 512">
+                    <rect x="32" y="112" width="448" height="368" rx="64" fill="#ffffff" />
+                    <path d="M32 176h448V112c0-35.3-28.7-64-64-64H96c-35.3 0-64 28.7-64 64v64z" fill="#ff3b30" />
+                    <text x="50%" y="145" fill="white" font-size="60" font-weight="700" text-anchor="middle"
+                        font-family="sans-serif">JAN</text>
+                    <text x="50%" y="400" fill="#333" font-size="240" font-weight="600" text-anchor="middle"
+                        font-family="sans-serif">12</text>
+                </svg>
+                Subscribe on Apple Devices
+            </a>
+        </div>
+
+        <div class="footer">
+            Data Source: <a href="https://nanakshahi.net/calendar/" target="_blank">nanakshahi.net/calendar</a> |
+            Creator: <a href="https://sagalpreet.github.io" target="_blank">Sagalpreet Singh</a>
+        </div>
     </div>
-
-    <div class="footer">
-        Data Source: <a href="https://nanakshahi.net/calendar/" target="_blank">nanakshahi.net/calendar</a> | 
-        Creator: <a href="https://sagalpreet.github.io" target="_blank">Sagalpreet Singh</a>
-    </div>
-</div>
 
 </body>
+
 </html>
