@@ -1,6 +1,6 @@
 # Projects
 
-This repository hosts multiple projects. Each project is designed to be independent and serves a specific purpose. Below is a brief overview of the projects currently available:
+This repository hosts projects that I build for myself but think may be useful to the community. Each project is designed to be independent and serves a specific purpose. Below is a brief overview of the projects currently available:
 
 ## Nanakshahi Calendar
 
