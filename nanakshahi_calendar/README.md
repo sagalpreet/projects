@@ -39,7 +39,7 @@ nanakshahi_calendar/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/sagalpreet/nanakshahi-calendar.git
+   git clone https://github.com/sagalpreet/projects.git
    ```
 2. Navigate to the project directory:
    ```bash
