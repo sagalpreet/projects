@@ -8,4 +8,10 @@ The Nanakshahi Calendar project provides a webpage for subscribing to the Nanaks
 
 - **Live Demo**: [Nanakshahi Calendar](https://sagalpreet.github.io/projects/nanakshahi_calendar)
 
+## Passport Photos
+
+Upload a photo, crop it to any country's passport specification, then generate a print-ready PDF with the photo tiled efficiently on your chosen page size (A4, A3, etc.).
+
+- **Live Demo**: [Passport Photos](https://sagalpreet.github.io/projects/passport_photos)
+
 More projects will be added to this repository in the future. Stay tuned!
