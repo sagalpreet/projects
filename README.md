@@ -14,4 +14,10 @@ Upload a photo, crop it to any country's passport specification, then generate a
 
 - **Live Demo**: [Passport Photos](https://sagalpreet.github.io/projects/passport_photos)
 
+## Image Tools
+
+Upload an image, crop it to exact pixel or inch dimensions (with configurable DPI), or compress it to a target file size in KB/MB. Everything runs client-side — no uploads to any server.
+
+- **Live Demo**: [Image Tools](https://sagalpreet.github.io/projects/image_tools)
+
 More projects will be added to this repository in the future. Stay tuned!
