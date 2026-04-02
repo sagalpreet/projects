@@ -8,6 +8,8 @@
 	<string>com.nightvision.app</string>
 	<key>CFBundleName</key>
 	<string>Night Vision</string>
+	<key>CFBundleIconFile</key>
+	<string>NightVision</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>

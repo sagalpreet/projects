@@ -189,27 +189,38 @@
 
         <section class="features">
             <div class="feature-card">
-                <span class="feature-icon">⚡</span>
-                <h3>Flash Smoothing</h3>
-                <p>Instantly detects rapid spikes in brightness and applies a momentary smoothing filter to protect your eyes from harsh strobe effects in videos.</p>
+                <span class="feature-icon">🎯</span>
+                <h3>Smart Localized Dimming</h3>
+                <p>Advanced 8x8 spatial analysis identifies "hotspots" in real-time. Only the bright parts of the screen are damped, leaving dark areas perfectly readable.</p>
             </div>
             <div class="feature-card">
-                <span class="feature-icon">🌙</span>
-                <h3>Adaptive Dark Mode</h3>
-                <p>Intelligently dims the screen when viewing bright white content (like spreadsheets or empty browser pages) to reduce glare without affecting clarity.</p>
+                <span class="feature-icon">🌊</span>
+                <h3>Smoothing Filters</h3>
+                <p>Configurable rolling buffers (5-30 frames) eliminate jitter and ensure fluid transitions, even at extreme 180 FPS capture rates.</p>
             </div>
             <div class="feature-card">
-                <span class="feature-icon">🔒</span>
-                <h3>Privacy First</h3>
-                <p>All screen analysis happens entirely on your device using ScreenCaptureKit. No data is ever recorded, stored, or transmitted.</p>
+                <span class="feature-icon">🚀</span>
+                <h3>Pro Performance</h3>
+                <p>Bilinear-interpolated shadow maps provide a natural, soft-edged smoothing effect while keeping CPU and battery usage at a minimum.</p>
             </div>
         </section>
 
         <div class="install-guide">
-            <h2>Easy Installation</h2>
+            <h2>Getting Started</h2>
             <p style="margin: 1.5rem 0 2rem; color: var(--text-muted);">
                 Download the DMG, drag it to your Applications folder, and grant <b>Screen Recording</b> permissions in System Settings to allow the app to detect flashes.
             </p>
+            
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: left; margin-bottom: 2rem;">
+                <h3 style="margin-bottom: 0.5rem; color: var(--accent); font-size: 1.1rem;">⚠️ Troubleshooting: "App is damaged"</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Because this app is not notarized by Apple, macOS may mark it as "damaged" when downloaded from the web. To fix this, run the following command in your Terminal:
+                </p>
+                <code style="display: block; background: #000; padding: 1rem; border-radius: 8px; font-family: monospace; color: #fff; font-size: 0.85rem; border: 1px solid var(--border);">
+                    xattr -cr /Applications/Night\ Vision.app
+                </code>
+            </div>
+
             <div style="display: flex; gap: 4rem; justify-content: center; flex-wrap: wrap;">
                 <div>
                     <h4 style="color: var(--accent);">Target</h4>
