@@ -205,23 +205,38 @@
             </div>
         </section>
 
-        <div class="install-guide">
-            <h2>Getting Started</h2>
-            <p style="margin: 1.5rem 0 2rem; color: var(--text-muted);">
-                Download the DMG, drag it to your Applications folder, and grant <b>Screen Recording</b> permissions in System Settings to allow the app to detect flashes.
-            </p>
-            
-            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; text-align: left; margin-bottom: 2rem;">
-                <h3 style="margin-bottom: 0.5rem; color: var(--accent); font-size: 1.1rem;">⚠️ Troubleshooting: "App is damaged"</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
-                    Because this app is not notarized by Apple, macOS may mark it as "damaged" when downloaded from the web. To fix this, run the following command in your Terminal:
-                </p>
-                <code style="display: block; background: #000; padding: 1rem; border-radius: 8px; font-family: monospace; color: #fff; font-size: 0.85rem; border: 1px solid var(--border);">
-                    xattr -cr /Applications/Night\ Vision.app
-                </code>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem; text-align: left;">
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;">
+                    <h3 style="margin-bottom: 1rem; color: var(--text); font-size: 1.1rem;">1. Install normally</h3>
+                    <ul style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; padding-left: 1.2rem;">
+                        <li>Open the downloaded <b>NightVision.dmg</b></li>
+                        <li>Drag the <b>Night Vision.app</b> icon into the <b>Applications</b> folder shortcut.</li>
+                        <li>Double-click the app in your Applications folder to launch.</li>
+                    </ul>
+                </div>
+                
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 16px; padding: 1.5rem; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: #ef4444;"></div>
+                    <h3 style="margin-bottom: 0.5rem; color: #ef4444; font-size: 1.1rem;">⚠️ "App is damaged" Error</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                        Because this is a free app without a paid Apple Developer signature, Gatekeeper will block it. Fix it in seconds:
+                    </p>
+                    <b style="color: var(--text); font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">Option A: Terminal (Recommended)</b>
+                    <code style="display: block; background: #000; padding: 0.75rem; border-radius: 8px; font-family: monospace; color: #fff; font-size: 0.8rem; border: 1px solid var(--border); margin-bottom: 1rem;">
+                        xattr -cr /Applications/Night\ Vision.app
+                    </code>
+                    <b style="color: var(--text); font-size: 0.9rem; display: block; margin-bottom: 0.5rem;">Option B: Right-Click</b>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">
+                        Right-Click (or Control-Click) the app and select <b>Open</b>.
+                    </p>
+                </div>
             </div>
 
-            <div style="display: flex; gap: 4rem; justify-content: center; flex-wrap: wrap;">
+            <p style="margin: 2rem 0; color: var(--text-muted); font-size: 0.9rem;">
+                <em>Note: Night Vision requires <b>Screen Recording</b> permissions in System Settings to detect screen brightness.</em>
+            </p>
+
+            <div style="display: flex; gap: 4rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
                 <div>
                     <h4 style="color: var(--accent);">Target</h4>
                     <p>macOS 12.3+</p>

@@ -40,5 +40,14 @@ codesign -s - --force --deep --entitlements "NightVision.entitlements" "$APP_NAM
 echo "Resetting screen capture permissions for fresh signature..."
 tccutil reset ScreenCapture "$BUNDLE_ID" 2>/dev/null || true
 
-echo "Successfully built $APP_NAME.app"
+# Create DMG with Applications shortcut
+echo "Creating DMG..."
+rm -f NightVision.dmg
+mkdir -p dmg_stage
+cp -R "$APP_NAME.app" dmg_stage/
+ln -s /Applications dmg_stage/Applications
+hdiutil create -volname "$APP_NAME" -srcfolder dmg_stage -ov -format UDZO NightVision.dmg
+rm -rf dmg_stage
+
+echo "Successfully built $APP_NAME.app and packaged into NightVision.dmg"
 echo "Copy to /Applications and launch. Grant Screen Recording permission when prompted."
