@@ -199,15 +199,25 @@ class ScreenAnalyzer: NSObject, SCStreamOutput, SCStreamDelegate {
             maxLumaBuffer.append(analysis.maxLuma)
             if maxLumaBuffer.count > smoothingDepth { maxLumaBuffer.removeFirst() }
             
-            self.currentLuma = avgLumaBuffer.reduce(0, +) / Double(avgLumaBuffer.count)
-            self.currentMinLuma = minLumaBuffer.reduce(0, +) / Double(minLumaBuffer.count)
-            self.currentMaxLuma = maxLumaBuffer.reduce(0, +) / Double(maxLumaBuffer.count)
+            // Fast-Attack, Slow-Release Logic
+            // If the raw frame is BRIGHTER than our buffer average, bypass the buffer to react instantly!
+            let avgBuffered = avgLumaBuffer.reduce(0, +) / Double(avgLumaBuffer.count)
+            self.currentLuma = max(analysis.avgLuma, avgBuffered)
+            
+            // Similarly for max luma: snap instantly to sudden bright jumps
+            let maxBuffered = maxLumaBuffer.reduce(0, +) / Double(maxLumaBuffer.count)
+            self.currentMaxLuma = max(analysis.maxLuma, maxBuffered)
+            
+            // For min luma, we want to snap instantly if the screen gets super bright (min goes up),
+            // so we use max again.
+            let minBuffered = minLumaBuffer.reduce(0, +) / Double(minLumaBuffer.count)
+            self.currentMinLuma = max(analysis.minLuma, minBuffered)
         }
         
-        // 1. Flash Detection (Safety spike)
-        let delta = currentLuma - lastLuminance
+        // 1. Flash Detection (Safety spike using INSTANT raw delta)
+        let instantDelta = analysis.avgLuma - lastLuminance
         let threshold = 0.15 * sensitivity
-        if delta > threshold {
+        if instantDelta > threshold {
             OverlayManager.shared.triggerFlashSmoothing(opacity: 0.6, duration: 0.3)
         }
         

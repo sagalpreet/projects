@@ -138,10 +138,15 @@ class OverlayManager: NSObject {
             let clampedOpacity = Float(min(1.0, max(0, opacity)))
             let clampedWhite = CGFloat(min(1.0, max(0, whiteValue)))
             
+            CATransaction.begin()
+            CATransaction.setDisableActions(true)
+            
             for layer in self.globalDimLayers {
                 layer.backgroundColor = NSColor(white: clampedWhite, alpha: 1.0).cgColor
                 layer.opacity = clampedOpacity
             }
+            
+            CATransaction.commit()
         }
     }
     
