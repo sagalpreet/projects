@@ -20,4 +20,10 @@ Upload an image, crop it to exact pixel or inch dimensions (with configurable DP
 
 - **Live Demo**: [Image Tools](https://sagalpreet.github.io/projects/image_tools)
 
+## Night Vision
+
+A macOS app that reduces eye strain by smoothing flashes and adaptively dimming your screen using real-time spatial analysis and Metal-accelerated overlays.
+
+- **Live Demo**: [Night Vision](https://sagalpreet.github.io/projects/night_vision)
+
 More projects will be added to this repository in the future. Stay tuned!
