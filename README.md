@@ -26,4 +26,11 @@ A macOS app that reduces eye strain by smoothing flashes and adaptively dimming 
 
 - **Live Demo**: [Night Vision](https://sagalpreet.github.io/projects/night_vision)
 
+## FreeFlow Voice Notes
+
+An Obsidian plugin for AI-powered voice dictation — free alternative to Wispr Flow / Superwhisper. Record speech, transcribe with Groq Whisper, post-process with an LLM, and save directly to your vault.
+
+- **Landing Page**: [https://sagalpreet.github.io/projects/freeflow_obsidian](https://sagalpreet.github.io/projects/freeflow_obsidian)
+- **GitHub Repository**: [https://github.com/sagalpreet/freeflow-obsidian](https://github.com/sagalpreet/freeflow-obsidian)
+
 More projects will be added to this repository in the future. Stay tuned!
