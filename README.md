@@ -33,4 +33,10 @@ An Obsidian plugin for AI-powered voice dictation — free alternative to Wispr 
 - **Landing Page**: [https://sagalpreet.github.io/projects/freeflow_obsidian](https://sagalpreet.github.io/projects/freeflow_obsidian)
 - **GitHub Repository**: [https://github.com/sagalpreet/freeflow-obsidian](https://github.com/sagalpreet/freeflow-obsidian)
 
+## Image Overlay
+
+A macOS menu bar app that overlays any image across all connected displays with adjustable transparency. Supports Fit, Fill (zoom-to-cover), Tile, Tile+Zoom, and Stretch display modes. Settings (opacity, mode, zoom, last image) persist across launches. Works on primary and extended displays simultaneously.
+
+- **Download**: [Image Overlay](https://sagalpreet.github.io/projects/image_overlay)
+
 More projects will be added to this repository in the future. Stay tuned!
