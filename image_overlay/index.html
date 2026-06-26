@@ -185,6 +185,9 @@
     </style>
 </head>
 <body>
+    <!-- Live paper grain overlay div -->
+    <div id="grain-overlay" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 9999; background-image: url('assets/paper_grain.png'); background-repeat: repeat; opacity: 0; transition: opacity 0.15s ease;"></div>
+
     <div class="container">
         <header>
             <span class="logo-icon">🖼️</span>
@@ -197,11 +200,30 @@
             </div>
         </header>
 
+        <!-- Interactive Grain Simulation Widget -->
+        <div class="interactive-grain-card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(236, 72, 153, 0.08)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 24px; padding: 2.5rem; text-align: center; margin-bottom: 5rem; backdrop-filter: blur(10px);">
+            <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem; color: #fff;">📄 Live Paper Grain Preview</h3>
+            <p style="color: var(--text-muted); font-size: 1rem; max-width: 650px; margin: 0 auto 1.5rem; line-height: 1.6;">
+                While Image Overlay is a general purpose utility, one of its main purposes is giving your entire macOS screen a warm, tactile, analog <b>paper grain finish</b> by using <code>assets/paper_grain.png</code>. Toggle the preview below to experience the effect on this webpage!
+            </p>
+            <div style="display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; background: var(--bg); border: 1px solid var(--border); padding: 1rem 2rem; border-radius: 16px; flex-wrap: wrap;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; cursor: pointer; user-select: none;">
+                    <input type="checkbox" id="grain-toggle" style="width: 1.2rem; height: 1.2rem; accent-color: var(--accent); cursor: pointer;">
+                    Enable Grain Overlay
+                </label>
+                <div id="slider-container" style="display: flex; align-items: center; gap: 0.75rem; opacity: 0.4; pointer-events: none; transition: opacity 0.2s;">
+                    <span style="font-size: 0.9rem; color: var(--text-muted);">Intensity:</span>
+                    <input type="range" id="grain-intensity" min="1" max="100" value="15" style="accent-color: var(--accent); cursor: pointer; width: 120px;">
+                    <span id="intensity-val" style="font-size: 0.9rem; color: var(--text); font-family: monospace; min-width: 2.5rem; text-align: left;">15%</span>
+                </div>
+            </div>
+        </div>
+
         <section class="features">
             <div class="feature-card">
                 <span class="feature-icon">✨</span>
-                <h3>Default Textures</h3>
-                <p>Comes pre-packaged with default overlays like <code>assets/paper_grain.png</code> to simulate tactile grain textures or sketch mockups instantly.</p>
+                <h3>Tactile Paper Grain</h3>
+                <p>One of the primary use cases: load the included <code>assets/paper_grain.png</code> overlay in cover/tile mode with low opacity to give your screen a comfortable, analog paper texture.</p>
             </div>
             <div class="feature-card">
                 <span class="feature-icon">🎨</span>
@@ -268,5 +290,31 @@
             <p>&copy; 2026 Image Overlay Utility. Free & Open Source.</p>
         </footer>
     </div>
+
+    <!-- Live Paper Grain script logic -->
+    <script>
+        const grainToggle = document.getElementById('grain-toggle');
+        const grainIntensity = document.getElementById('grain-intensity');
+        const intensityVal = document.getElementById('intensity-val');
+        const grainOverlay = document.getElementById('grain-overlay');
+        const sliderContainer = document.getElementById('slider-container');
+
+        function updateGrain() {
+            if (grainToggle.checked) {
+                const opacity = grainIntensity.value / 100;
+                grainOverlay.style.opacity = opacity;
+                sliderContainer.style.opacity = '1';
+                sliderContainer.style.pointerEvents = 'auto';
+            } else {
+                grainOverlay.style.opacity = '0';
+                sliderContainer.style.opacity = '0.4';
+                sliderContainer.style.pointerEvents = 'none';
+            }
+            intensityVal.textContent = grainIntensity.value + '%';
+        }
+
+        grainToggle.addEventListener('change', updateGrain);
+        grainIntensity.addEventListener('input', updateGrain);
+    </script>
 </body>
 </html>
