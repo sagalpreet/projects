@@ -177,6 +177,54 @@
             overflow-x: auto;
         }
 
+        /* Custom Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border);
+            transition: .2s ease;
+            border-radius: 24px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .2s ease;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(20px);
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             .cta-group { flex-direction: column; }
@@ -190,26 +238,23 @@
 
     <div class="container">
         <header>
-            <span class="logo-icon">🖼️</span>
             <h1>Image Overlay</h1>
-            <p class="tagline">Overlay grids, reference layouts, UI mockups, or textures seamlessly over your workspace with precision controls.</p>
-            
-            <div class="cta-group">
-                <a href="ImageOverlay.dmg" class="btn btn-primary" id="download-btn">Download for macOS (.dmg)</a>
-                <a href="../index.html" class="btn btn-secondary">Back to Projects</a>
-            </div>
+            <p class="tagline" style="margin-bottom: 2rem;">Overlay grids, reference layouts, UI mockups, or textures seamlessly over your workspace with precision controls.</p>
         </header>
 
         <!-- Interactive Grain Simulation Widget -->
-        <div class="interactive-grain-card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(236, 72, 153, 0.08)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 24px; padding: 2.5rem; text-align: center; margin-bottom: 5rem; backdrop-filter: blur(10px);">
+        <div class="interactive-grain-card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(236, 72, 153, 0.08)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 24px; padding: 2.5rem; text-align: center; margin-bottom: 2.5rem; backdrop-filter: blur(10px);">
             <h3 style="font-size: 1.6rem; margin-bottom: 0.75rem; color: #fff;">📄 Live Paper Grain Preview</h3>
             <p style="color: var(--text-muted); font-size: 1rem; max-width: 650px; margin: 0 auto 1.5rem; line-height: 1.6;">
                 While Image Overlay is a general purpose utility, one of its main purposes is giving your entire macOS screen a warm, tactile, analog <b>paper grain finish</b> by using <code>assets/paper_grain.png</code>. Toggle the preview below to experience the effect on this webpage!
             </p>
             <div style="display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; background: var(--bg); border: 1px solid var(--border); padding: 1rem 2rem; border-radius: 16px; flex-wrap: wrap;">
-                <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; cursor: pointer; user-select: none;">
-                    <input type="checkbox" id="grain-toggle" style="width: 1.2rem; height: 1.2rem; accent-color: var(--accent); cursor: pointer;">
-                    Enable Grain Overlay
+                <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer; user-select: none;">
+                    <span style="font-size: 0.95rem;">Paper Grain Preview</span>
+                    <span class="switch">
+                        <input type="checkbox" id="grain-toggle">
+                        <span class="toggle-slider"></span>
+                    </span>
                 </label>
                 <div id="slider-container" style="display: flex; align-items: center; gap: 0.75rem; opacity: 0.4; pointer-events: none; transition: opacity 0.2s;">
                     <span style="font-size: 0.9rem; color: var(--text-muted);">Intensity:</span>
@@ -217,6 +262,11 @@
                     <span id="intensity-val" style="font-size: 0.9rem; color: var(--text); font-family: monospace; min-width: 2.5rem; text-align: left;">15%</span>
                 </div>
             </div>
+        </div>
+
+        <div class="cta-group" style="margin-bottom: 5rem;">
+            <a href="ImageOverlay.dmg" class="btn btn-primary" id="download-btn">Download for macOS (.dmg)</a>
+            <a href="../index.html" class="btn btn-secondary">Back to Projects</a>
         </div>
 
         <section class="features">
