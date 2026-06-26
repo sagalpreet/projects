@@ -229,6 +229,7 @@
             h1 { font-size: 2.5rem; }
             .cta-group { flex-direction: column; }
             .install-guide { padding: 1rem; }
+            .interactive-grain-card { padding: 1.5rem 1rem !important; }
         }
     </style>
 </head>
@@ -248,7 +249,7 @@
             <p style="color: var(--text-muted); font-size: 1rem; max-width: 650px; margin: 0 auto 1.5rem; line-height: 1.6;">
                 While Image Overlay is a general purpose utility, one of its main purposes is giving your entire macOS screen a warm, tactile, analog <b>paper grain finish</b> by using <code>assets/paper_grain.png</code>. Toggle the preview below to experience the effect on this webpage!
             </p>
-            <div style="display: inline-flex; align-items: center; justify-content: center; gap: 1.5rem; background: var(--bg); border: 1px solid var(--border); padding: 1rem 2rem; border-radius: 16px; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; background: var(--bg); border: 1px solid var(--border); padding: 1rem 1.5rem; border-radius: 16px; flex-wrap: wrap; max-width: 480px; margin: 0 auto;">
                 <label style="display: flex; align-items: center; gap: 0.75rem; font-weight: 600; cursor: pointer; user-select: none;">
                     <span style="font-size: 0.95rem;">Paper Grain Preview</span>
                     <span class="switch">
@@ -258,7 +259,7 @@
                 </label>
                 <div id="slider-container" style="display: flex; align-items: center; gap: 0.75rem; opacity: 0.4; pointer-events: none; transition: opacity 0.2s;">
                     <span style="font-size: 0.9rem; color: var(--text-muted);">Intensity:</span>
-                    <input type="range" id="grain-intensity" min="1" max="100" value="15" style="accent-color: var(--accent); cursor: pointer; width: 120px;">
+                    <input type="range" id="grain-intensity" min="1" max="50" value="15" style="accent-color: var(--accent); cursor: pointer; width: 120px;">
                     <span id="intensity-val" style="font-size: 0.9rem; color: var(--text); font-family: monospace; min-width: 2.5rem; text-align: left;">15%</span>
                 </div>
             </div>
