@@ -37,6 +37,12 @@ if [ -f "ImageOverlay.icns" ]; then
     cp ImageOverlay.icns "$APP_NAME.app/Contents/Resources/"
 fi
 
+# Copy default assets
+mkdir -p "$APP_NAME.app/Contents/Resources/assets"
+if [ -f "assets/paper_grain.png" ]; then
+    cp assets/paper_grain.png "$APP_NAME.app/Contents/Resources/assets/"
+fi
+
 # Ad-hoc sign with entitlements
 echo "  Signing..."
 codesign -s - --force --deep \
@@ -49,17 +55,15 @@ echo "To run:"
 echo "  open \"$APP_NAME.app\""
 echo ""
 
-# Optional: create DMG
-if [ "${1}" == "--dmg" ]; then
-    echo "📦 Creating DMG..."
-    rm -f ImageOverlay.dmg
-    mkdir -p dmg_stage
-    cp -R "$APP_NAME.app" dmg_stage/
-    ln -s /Applications dmg_stage/Applications
-    hdiutil create -volname "$APP_NAME" \
-        -srcfolder dmg_stage \
-        -ov -format UDZO \
-        ImageOverlay.dmg
-    rm -rf dmg_stage
-    echo "✅ ImageOverlay.dmg created"
-fi
+# Create DMG
+echo "📦 Creating DMG..."
+rm -f ImageOverlay.dmg
+mkdir -p dmg_stage
+cp -R "$APP_NAME.app" dmg_stage/
+ln -s /Applications dmg_stage/Applications
+hdiutil create -volname "$APP_NAME" \
+    -srcfolder dmg_stage \
+    -ov -format UDZO \
+    ImageOverlay.dmg
+rm -rf dmg_stage
+echo "✅ ImageOverlay.dmg created"

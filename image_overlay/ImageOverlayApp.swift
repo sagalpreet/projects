@@ -58,8 +58,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
         manager.zoomFactor = storedZoom
 
         // Last image
-        if let path = ud.string(forKey: Defaults.imagePath) {
-            manager.image = NSImage(contentsOfFile: path)
+        var imageLoaded = false
+        if let path = ud.string(forKey: Defaults.imagePath),
+           let img = NSImage(contentsOfFile: path) {
+            manager.image = img
+            imageLoaded = true
+        }
+
+        if !imageLoaded {
+            if let defaultPath = Bundle.main.path(forResource: "paper_grain", ofType: "png", inDirectory: "assets"),
+               let img = NSImage(contentsOfFile: defaultPath) {
+                manager.image = img
+                ud.set(defaultPath, forKey: Defaults.imagePath)
+            }
         }
 
         // Enabled state (default off)
